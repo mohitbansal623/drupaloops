@@ -1,0 +1,6 @@
+name: Test Twig
+description: An experimental module to build our first twig file.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

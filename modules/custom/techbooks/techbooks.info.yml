@@ -1,0 +1,5 @@
+name: 'techbooks'
+type: module
+description: 'My first service'
+core: 8.x
+package: 'Custom'

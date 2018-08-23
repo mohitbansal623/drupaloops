@@ -1,0 +1,7 @@
+mydata.mydata_controller_display:
+  path: '/first-service'
+  defaults:
+    _controller: '\Drupal\techbooks\Controller\MydataController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'

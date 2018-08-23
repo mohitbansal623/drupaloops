@@ -1,0 +1,23 @@
+pagearg.form:
+ path: '/pagearg/myform'
+ defaults:
+   _title: 'Application form'
+   _form: '\Drupal\pagearg\Form\pageargForm'
+ requirements:
+   _permission: 'access content'
+
+work.form:
+  path: 'pagearg/mypage'
+  defaults:
+    _form: '\Drupal\pagearg\Form\WorkForm'
+    _title: 'D8 form'
+  requirements:
+    _permission: 'access content'
+  example.name:
+
+addition.form:
+    path: '/addition/{first}/{second}/{third}'
+    defaults:
+      _controller: '\Drupal\pagearg\Controller\AdditionController::add'
+    requirements:
+      _permission: 'access content'

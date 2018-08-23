@@ -1,0 +1,36 @@
+
+mydatatheme.mydatatheme_controller_display:
+  path: '/mydatatheme'
+  defaults:
+    _controller: '\Drupal\mydatatheme\Controller\mydatathemeController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+mydatatheme.mydatatheme_form:
+  path: '/mydatatheme/form/mydatatheme'
+  defaults:
+    _form: '\Drupal\mydatatheme\Form\mydatathemeForm'
+    _title: 'mydatathemeForm'
+  requirements:
+    _access: 'TRUE'
+
+
+mydatatheme.display_table_controller_display:
+  path: '/mydatatheme/hello/table'
+  defaults:
+    _controller: '\Drupal\mydatatheme\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+
+
+mydatatheme.delete_form:
+  path: '/mydatatheme/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\mydatatheme\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+

@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains mydataajax.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function mydataajax_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mydataajax module.
+    case 'help.page.mydataajax':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This dispaly information what you enter your application.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function mydataajax_theme() {
+  // We use a template file to allow for translation of blocks of content.
+  // Therefore we need to add this content at the theming layer.
+  return [
+    'mydataajax_description' => [
+      'template' => 'description',
+      'variables' => [],
+    ],
+  ];
+}

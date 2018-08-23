@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function first_module_theme() {
+  dpm("mohi");
+  $theme['firsttheme'] = [
+    'template' => 'page--first_module',
+  ];
+
+  return $theme;
+}

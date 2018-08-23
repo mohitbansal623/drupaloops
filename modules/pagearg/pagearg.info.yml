@@ -1,0 +1,5 @@
+name: Page arg
+description: A page arg form to enter user details.
+core: 8.x
+package: Custom
+type: module

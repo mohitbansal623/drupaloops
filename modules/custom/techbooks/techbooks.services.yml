@@ -1,0 +1,4 @@
+services:
+  techbooks.listbooks:
+    class: Drupal\techbooks\ListBooks
+    arguments: []

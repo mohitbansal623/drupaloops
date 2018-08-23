@@ -1,0 +1,44 @@
+
+mydataajax.mydataajax_controller_display:
+  path: '/mydataajax'
+  defaults:
+    _controller: '\Drupal\mydataajax\Controller\mydataajaxController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+mydataajax.mydataajax_form:
+  path: '/mydataajax/form/mydataajax'
+  defaults:
+    _form: '\Drupal\mydataajax\Form\mydataajaxForm'
+    _title: 'mydataajaxForm'
+  requirements:
+    _access: 'TRUE'
+
+
+mydataajax.display_table_controller_display:
+  path: '/mydataajax/hello/table'
+  defaults:
+    _controller: '\Drupal\mydataajax\Controller\DisplayTableController::display'
+    _title: 'display'
+  requirements:
+    _permission: 'access content'
+
+
+
+mydataajax.delete_form:
+  path: '/mydataajax/form/delete/{cid}'
+  defaults:
+    _form: '\Drupal\mydataajax\Form\DeleteForm'
+    _title: 'DeleteForm'
+  requirements:
+    _access: 'TRUE'
+
+mydataajax.param:
+  path: 'mydataajax/{bar}'
+  defaults:
+    _controller: '\Drupal\mydataajax\Controller\mydataajaxparam::content'
+  options:
+    parameters:
+      bar:
+        type: bar

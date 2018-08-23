@@ -1,0 +1,7 @@
+test_twig.content:
+  path: '/firsttwig'
+  defaults:
+    _controller: 'Drupal\test_twig\Controller\TestTwig::content'
+    _title: 'Testing  Twig'
+  requirements:
+    _permission: 'access content'
