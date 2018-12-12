@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Contains site_api_key.module.
+*/
+use \Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+/**
+* Implements hook_form_FORM_ID_alter().
+*/
+function site_api_key_form_system_site_information_settings_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Renaming Save button to Update Configuration
+  $form['actions']['submit']['#value'] = 'Update Configuration';
+
+  // Using Config factory to get a value stored in variable siteapikey
+  $config = \Drupal::service('config.factory')->getEditable('siteapikey.settings');
+  $site_apikey = $config->get('siteapikey');
+
+  if (empty($site_apikey)) {
+    $site_apikey = 'No API Key yet';
+  }
+
+
+  // Creating a Textfield for entering Site API Key on Site Information Page
+  $form['site_api_key'] = array(
+    '#type' => 'textfield',
+    '#maxlength' => 255,
+    '#title' => t("Site API Key"),
+    '#default_value' => t($site_apikey),
+    '#required' => TRUE,
+  );
+
+  // Setting a custom submit handler for saving the api key value.
+  foreach (array_keys($form['actions']) as $action) {
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      $form['actions'][$action]['#submit'][] = 'site_api_key_form_submit';
+    }
+  }
+}
+
+/**
+* Implements submit handler when form save/update
+*/
+function site_api_key_form_submit(array $form, FormStateInterface $form_state) {
+  // Getting the value for site api key entered in a form
+  $site_api_key = $form_state->getValue('site_api_key');
+
+  //Setting the value in a variable
+  $config = \Drupal::service('config.factory')->getEditable('siteapikey.settings');
+  $config->set('siteapikey', $site_api_key)->save();
+}

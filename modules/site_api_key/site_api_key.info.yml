@@ -1,0 +1,5 @@
+name: Site API Key
+type: module
+description: This module will display textfield on site information page and perform some operations.
+core: 8.x
+package: Custom

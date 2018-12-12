@@ -1,0 +1,7 @@
+mydatatheme.mydatatheme_form:
+  path: '/site_api_key_form'
+  defaults:
+    _form: '\Drupal\site_api_key\Form\site_api_key'
+    _title: 'siteapikeyForm'
+  requirements:
+    _access: 'TRUE'
