@@ -8,7 +8,7 @@ After this I have created a form on URL /site_api_key_form which will take NID a
 That JSON format I am unable to display for now.
 
 Time taken by me to complete this is 1.5hrs. As I am a beginner in D8 so it took some time by me.
-Please review this and let me know where I need to improve in this.
+Please review this and let me know where I need to make corrections.
 
 Links used - http://zoubi.me/blog/variable-get-and-variable-set-drupal-8
 https://drupal.stackexchange.com/questions/223342/add-a-custom-submission-handler-to-a-form
